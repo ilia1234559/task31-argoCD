@@ -9,4 +9,4 @@ containerNginx:
 containerApache:
   image: ilia1234559/task31:apache
 
-replicasCount: 1
+replicasCount: 2 2 
