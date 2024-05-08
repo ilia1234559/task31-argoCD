@@ -9,4 +9,7 @@ containerNginx:
 containerApache:
   image: ilia1234559/task31:apache
 
+containerTest:
+  image: ahineia/nginx-ci-cd:1.0.54
+
 replicasCount: 2 

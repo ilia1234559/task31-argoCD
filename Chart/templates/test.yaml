@@ -1,15 +1,21 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: test-deployment                   #{{ .Values.metadata.name }}
+  name: {{ .Release.Name }}-test-deployment                   #{{ .Values.metadata.name }}
   labels:
-    app: test-deployment
-  spec:
-    replicas: 1
-    template:
-      spec:
-        containers:
-          - name: test-web
-            image: ahineia/nginx-ci-cd:1.0.54
-            ports:
-              - containerPort: 80
+    app: {{ .Release.Name }}-test-deployment
+spec:
+  replicas: {{ .Values.replicasCount }}
+  selector:
+    matchLabels:
+      project: {{ .Release.Name }}-test
+  template:
+    metadata:
+      labels:
+        project: {{ .Release.Name }}-test
+    spec:
+      containers:
+        - name: {{ .Release.Name }}-test-web
+          image: {{ .Values.containerTest.image }}
+          ports:
+            - containerPort: 80
