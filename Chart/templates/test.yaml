@@ -7,9 +7,6 @@ metadata:
   spec:
     replicas: 1
     template:
-      metadata:
-        labels:
-          project: test-nginx
       spec:
         containers:
           - name: test-web
