@@ -4,12 +4,9 @@ metadata:
   name: name_from_values
 
 containerNginx:
-  image: ilia1234559/task31:nginx-3
+  image: ilia1234559/task31:nginx-fix1
 
 containerApache:
   image: ilia1234559/task31:apache
 
-containerTest:
-  image: ahineia/nginx-ci-cd:1.0.54
-
-replicasCount: 2 
+replicasCount: 2
