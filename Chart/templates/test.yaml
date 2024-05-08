@@ -1,19 +1,21 @@
-apiVersion: apps/v1 
-name: test-deployment                   #{{ .Values.metadata.name }}
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: test-deployment                   #{{ .Values.metadata.name }}
   labels:
     app: test-deployment
-spec:
-  replicas: 1
-  selector:
-    matchLabels:
-      project: test-nginx
-  template:
-    metadata:
-      labels:
+  spec:
+    replicas: 1
+    selector:
+      matchLabels:
         project: test-nginx
-    spec:
-      containers:
-        - name: test-web
-          image: ahineia/nginx-ci-cd:1.0.54
-          ports:
-            - containerPort: 80
+    template:
+      metadata:
+        labels:
+          project: test-nginx
+      spec:
+        containers:
+          - name: test-web
+            image: ahineia/nginx-ci-cd:1.0.54
+            ports:
+              - containerPort: 80
