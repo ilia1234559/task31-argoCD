@@ -1,3 +1,4 @@
+apiVersion: apps/v1 
 name: test-deployment                   #{{ .Values.metadata.name }}
   labels:
     app: test-deployment
