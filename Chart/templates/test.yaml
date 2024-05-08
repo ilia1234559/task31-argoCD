@@ -6,9 +6,6 @@ metadata:
     app: test-deployment
   spec:
     replicas: 1
-    selector:
-      matchLabels:
-        project: test-nginx
     template:
       metadata:
         labels:
