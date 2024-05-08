@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ .Release.Name }}-apache-deployment                   #{{ .Values.metadata.name }}
+  labels:
+    app: {{ .Release.Name }}-apache-deployment   
+spec:
+  replicas: {{ .Values.replicasCount }}
+  selector:
+    matchLabels:
+      project: {{ .Release.Name }}-apache
+  template:
+    metadata:
+      labels:
+        project: {{ .Release.Name }}-apache
+    spec:
+      containers:
+        - name: {{ .Release.Name }}-apache-web
+          image: {{ .Values.containerApache.image }}
+          ports:
+            - containerPort: 80

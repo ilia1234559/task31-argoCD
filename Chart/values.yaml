@@ -1,0 +1,12 @@
+# default values for Helm Chart
+
+metadata:
+  name: name_from_values
+
+containerNginx:
+  image: ilia1234559/task31:nginx-2
+
+containerApache:
+  image: ilia1234559/task31:apache
+
+replicasCount: 1
