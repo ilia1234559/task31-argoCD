@@ -4,7 +4,7 @@ metadata:
   name: name_from_values
 
 containerNginx:
-  image: ilia1234559/task31:nginx-2
+  image: ilia1234559/task31:nginx-3
 
 containerApache:
   image: ilia1234559/task31:apache
